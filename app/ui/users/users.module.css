@@ -1,3 +1,14 @@
+body {
+  background-color: rgb(50, 37, 63);
+}
+.header {
+  background-color: rgb(92, 55, 127);
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
 #users_list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
