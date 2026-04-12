@@ -1,0 +1,49 @@
+#users_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: 1.5em;
+  padding: 3%;
+}
+
+.card {
+  background-color: rgb(92, 55, 127);
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: 30vh;
+  padding: 3%;
+  border-radius: 1em;
+}
+
+.card h4 {
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.user_address {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 1199px) {
+  #users_list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #users_list {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 60vw;
+    height: 35vh;
+  }
+}
