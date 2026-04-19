@@ -12,8 +12,6 @@
  * ---------------------------------------------------------------------------------
  */
 
-export declare const internalGroqTypeReferenceTo: unique symbol;
-
 // Source: sanity/extract.json
 export type AuthorReference = {
   _ref: string;
@@ -94,18 +92,18 @@ export type BlockContent = Array<
 
 export type SanityImageCrop = {
   _type: "sanity.imageCrop";
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
 };
 
 export type SanityImageHotspot = {
   _type: "sanity.imageHotspot";
-  x?: number;
-  y?: number;
-  height?: number;
-  width?: number;
+  x: number;
+  y: number;
+  height: number;
+  width: number;
 };
 
 export type Author = {
@@ -145,7 +143,7 @@ export type Author = {
 
 export type Slug = {
   _type: "slug";
-  current?: string;
+  current: string;
   source?: string;
 };
 
@@ -181,9 +179,9 @@ export type SanityImagePalette = {
 
 export type SanityImageDimensions = {
   _type: "sanity.imageDimensions";
-  height?: number;
-  width?: number;
-  aspectRatio?: number;
+  height: number;
+  width: number;
+  aspectRatio: number;
 };
 
 export type SanityImageMetadata = {
@@ -209,14 +207,14 @@ export type SanityFileAsset = {
   title?: string;
   description?: string;
   altText?: string;
-  sha1hash?: string;
-  extension?: string;
-  mimeType?: string;
-  size?: number;
-  assetId?: string;
+  sha1hash: string;
+  extension: string;
+  mimeType: string;
+  size: number;
+  assetId: string;
   uploadId?: string;
-  path?: string;
-  url?: string;
+  path: string;
+  url: string;
   source?: SanityAssetSourceData;
 };
 
@@ -238,14 +236,14 @@ export type SanityImageAsset = {
   title?: string;
   description?: string;
   altText?: string;
-  sha1hash?: string;
-  extension?: string;
-  mimeType?: string;
-  size?: number;
-  assetId?: string;
+  sha1hash: string;
+  extension: string;
+  mimeType: string;
+  size: number;
+  assetId: string;
   uploadId?: string;
-  path?: string;
-  url?: string;
+  path: string;
+  url: string;
   metadata?: SanityImageMetadata;
   source?: SanityAssetSourceData;
 };
@@ -277,13 +275,15 @@ export type AllSanitySchemaTypes =
   | SanityImageAsset
   | Geopoint;
 
+export declare const internalGroqTypeReferenceTo: unique symbol;
+
 // Source: sanity/lib/queries.ts
 // Variable: POSTS_QUERY
 // Query: *[_type == "post" && defined(slug.current)][0...12]{  _id, title, slug}
 export type POSTS_QUERY_RESULT = Array<{
   _id: string;
   title: string | null;
-  slug: Slug | null;
+  slug: Slug;
 }>;
 
 // Source: sanity/lib/queries.ts
