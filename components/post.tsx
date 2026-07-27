@@ -8,19 +8,9 @@ import { POST_QUERYResult } from "@/sanity/types";
 import { PublishedAt } from "@/components/published-at";
 import { Title } from "@/components/title";
 import { urlFor } from "@/sanity/lib/image";
-import { RelatedPosts } from "@/components/related-posts";
 
 export function Post(props: NonNullable<POST_QUERYResult>) {
-  const {
-    _id,
-    title,
-    author,
-    mainImage,
-    body,
-    publishedAt,
-    categories,
-    relatedPosts,
-  } = props;
+  const { title, author, mainImage, body, publishedAt, categories } = props;
 
   return (
     <article className="grid lg:grid-cols-12 gap-y-12">
@@ -45,11 +35,6 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
       {body ? (
         <div className="lg:col-span-7 lg:col-start-6 prose lg:prose-lg">
           <PortableText value={body} components={components} />
-          <RelatedPosts
-            relatedPosts={relatedPosts}
-            documentId={_id}
-            documentType="post"
-          />
         </div>
       ) : null}
     </article>
