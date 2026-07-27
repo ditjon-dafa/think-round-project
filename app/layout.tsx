@@ -31,10 +31,14 @@ export default function FrontendLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="bg-white min-h-screen">
-      <Header />
-      {children}
-      <SanityLive />
-    </section>
+    <html lang="en">
+      <body>
+        <section className="bg-white min-h-screen">
+          <Header />
+          {children}
+          <SanityLive />
+        </section>
+      </body>
+    </html>
   );
 }
